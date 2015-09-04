@@ -56,22 +56,24 @@ exports.upload = function(rootUrl, authorization, content, callback) {
 
 /**
 * retrieves file processing results summary
-* @param {object} request Defines rootUrl and authorization header value
+* @param {rootUrl} Root url of awardletter API
+* @param {authorization} Authorization header value
 * @param {fileId} string The Id of the file being retrieved
 # @param {function} callback Standard callback
 */
-exports.getFile = function(request, fileId, callback) {
+exports.getFile = function(rootUrl, authorization, fileId, callback) {
   var options = {
-    url: request.rootUrl + files + '/' + fileId,
+    url: rootUrl + files + '/' + fileId,
     headers: {
-      'Authorization': request.authorization,
+      'Authorization': authorization,
       'Content-Type': 'application/octet-stream'
     }
   };
 
   /**
   * callback for http.get
-  * @param {object} error The error if any occurred
+  * @param {rootUrl} Root url of awardletter API
+  * @param {authorization} Authorization header value
   * @param {object} response http response object
   * @param {body} body http response body
   */ 
@@ -88,16 +90,17 @@ exports.getFile = function(request, fileId, callback) {
 
 /**
 * get all records for a given file
-* @param {object} request Defines rootUrl and authorization header value
+* @param {rootUrl} Root url of awardletter API
+* @param {authorization} Authorization header value
 * @param {fileId} string The Id of the file for which records are being retrieved
 # @param {function} callback Standard callback
 */
-exports.getRecords = function(request, fileId, callback) {
+exports.getRecords = function(rootUrl, authorization, fileId, callback) {
   
   var options = {
-    url: request.rootUrl + files + '/' + fileId + '/records',
+    url: rootUrl + files + '/' + fileId + '/records',
     headers: {
-      'Authorization': request.authorization,
+      'Authorization': authorization,
       'Content-Type': 'application/octet-stream'
     }
   };
