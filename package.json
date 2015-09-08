@@ -1,6 +1,6 @@
 {
-  "name": "alfilesservice",
-  "version": "1.0.1",
+  "name": "al-files-service",
+  "version": "1.0.2",
   "description": "awardletter files service api",
   "main": "index.js",
   "scripts": {
@@ -24,6 +24,10 @@
   },
   "homepage": "https://github.com/manalotoj/alfilesservice#readme",
   "dependencies": {
-    "request": "^2.61.0"
+    "promise": "^7.0.4",
+    "request-promise": "^0.4.3"
+  },
+  "devDependencies": {
+    "oauth-wrap": "^1.0.0"
   }
 }

@@ -1,0 +1,18 @@
+{
+	"logging" : {
+		"directory" : "./logs"
+	},
+	"oauth" : {
+		"url":"https://studentverification.accesscontrol.windows.net/WRAPv0.9/",
+		"creds":{"uid":"uid", "pwd":"pwd"},
+		"wrapScope":"scope"
+	},
+	"filesApi" : {
+		"rootUrl" : "rooturl"
+	},
+	"watch" : {
+		"directory" : "./source",
+		"extension" : "json"
+	},
+	"targetDirectory" : "./target"	
+}
