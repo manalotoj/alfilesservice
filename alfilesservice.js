@@ -1,8 +1,8 @@
-// filename: index.js
+// filename: alfilesservice.js
 
 /** 
-* @module alfilesservice 
-* @description Exposes operations supported by awardletter files REST api
+* @module al-files-service 
+* @description Exposes operations supported by awardletter files RESTful API
 */
 
 'use strict';
@@ -24,7 +24,9 @@ function HttpException(statusCode, message) {
 * @param {rootUrl} Root url of awardletter API
 * @param {authorization} Authorization header value
 * @param {object} content JSON content to be uploaded
-* @returns {function} Returns a promise of the results.
+* @returns {function} A promise.
+*   The promise will resolve with an Id (fileId) for the uploaded file.
+*   Any response whose status code is not 2xx will result in a rejected promise.
 */
 exports.upload = function(rootUrl, authorization, content) {
 
@@ -45,7 +47,9 @@ exports.upload = function(rootUrl, authorization, content) {
 * @param {rootUrl} Root url of awardletter API
 * @param {authorization} Authorization header value
 * @param {fileId} string The Id of the file being retrieved
-* @returns {function} Returns a promise of the results.
+* @returns {function} A promise.
+*   A resolved promise will return the the file processing results summary.
+*   Any response with a status code that is not 2xx will result in a rejected promise.
 */
 exports.getFile = function(rootUrl, authorization, fileId) {
   var options = {
@@ -65,6 +69,8 @@ exports.getFile = function(rootUrl, authorization, fileId) {
 * @param {authorization} Authorization header value
 * @param {fileId} string The Id of the file for which records are being retrieved
 * @returns {function} Returns a promise of the results.
+*   A resolved promise returns all records for a given file.
+*   Any response with a status code that is not 2xx will result in a rejected promise.
 */
 exports.getRecords = function(rootUrl, authorization, fileId) {
   

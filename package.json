@@ -1,8 +1,8 @@
 {
   "name": "al-files-service",
-  "version": "1.0.2",
+  "version": "1.0.1",
   "description": "awardletter files service api",
-  "main": "index.js",
+  "main": "alfilesservice.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
