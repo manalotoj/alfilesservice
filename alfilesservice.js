@@ -36,7 +36,7 @@ exports.upload = function(rootUrl, authorization, content) {
       'Authorization': authorization,
       'Content-Type': 'application/octet-stream'
     },
-    body: JSON.stringify(content)
+    body: content
   };  
 
   return httpRequest.post(options);

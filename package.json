@@ -1,6 +1,6 @@
 {
   "name": "al-files-service",
-  "version": "1.0.1",
+  "version": "1.0.10",
   "description": "awardletter files service api",
   "main": "alfilesservice.js",
   "scripts": {
